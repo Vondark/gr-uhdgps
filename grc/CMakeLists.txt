@@ -18,8 +18,9 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    uhdgps_gps_probe.xml
-    uhdgps_meta_to_json_file.xml
-    uhdgps_cpdu_average_power.xml
+    uhdgps_gps_probe.block.yml
+    uhdgps_meta_to_json_file.block.yml
+    uhdgps_cpdu_average_power.block.yml
+    uhdgps.tree.yml
     DESTINATION share/gnuradio/grc/blocks
 )

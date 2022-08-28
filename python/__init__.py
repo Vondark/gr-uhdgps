@@ -28,21 +28,21 @@ description here (python/__init__.py).
 import sys
 _RTLD_GLOBAL = 0
 try:
-    from dl import RTLD_GLOBAL as _RTLD_GLOBAL
+	from dl import RTLD_GLOBAL as _RTLD_GLOBAL
 except ImportError:
-    try:
-	from DLFCN import RTLD_GLOBAL as _RTLD_GLOBAL
-    except ImportError:
-	pass
+	try:
+		from DLFCN import RTLD_GLOBAL as _RTLD_GLOBAL
+	except ImportError:
+		pass
 
 if _RTLD_GLOBAL != 0:
-    _dlopenflags = sys.getdlopenflags()
-    sys.setdlopenflags(_dlopenflags|_RTLD_GLOBAL)
+	_dlopenflags = sys.getdlopenflags()
+	sys.setdlopenflags(_dlopenflags|_RTLD_GLOBAL)
 # ----------------------------------------------------------------
 
-from gps_probe import *
-from meta_to_json_file import *
-from cpdu_average_power import *
+from .meta_to_json_file import *
+from .cpdu_average_power import *
+from .gps_probe import *
 
 # import swig generated symbols into the uhdgps namespace
 try:
@@ -57,5 +57,5 @@ except ImportError:
 # ----------------------------------------------------------------
 # Tail of workaround
 if _RTLD_GLOBAL != 0:
-    sys.setdlopenflags(_dlopenflags)      # Restore original flags
+	sys.setdlopenflags(_dlopenflags)      # Restore original flags
 # ----------------------------------------------------------------

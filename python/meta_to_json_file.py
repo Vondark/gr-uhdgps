@@ -28,7 +28,7 @@ class meta_to_json_file(gr.sync_block):
         subs = {"hostname":os.uname()[1], "time":time.time()}
         self.fn = filename % subs;
         self.f = open(self.fn, "w");
-        print "WARNING: Writing JSON object trace to %s"%(self.fn);
+        print ("WARNING: Writing JSON object trace to %s" %self.fn);
 
     def work(self, input_items, output_items):
         assert(False)

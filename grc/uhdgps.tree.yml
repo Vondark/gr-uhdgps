@@ -1,0 +1,5 @@
+'[Core]':
+-   uhdgps:
+    - uhdgps_cpdu_average_power
+    - uhdgps_gps_probe
+    - uhdgps_meta_to_json_file
